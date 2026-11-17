@@ -1,6 +1,9 @@
 # subtitles-grouping
 Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.
 
+Install a tagged release from `Stremio/node-subtitles-grouping` on GitHub.
+For example: `npm install github:Stremio/node-subtitles-grouping#<tag>`.
+
 Why?
 -----
 OpenSubtitles has two ways of matching subtitles: metadata (e.g. IMDB ID) and movieHash. While the first one looks subtitles for a particular movie or TV episode, the second method retrieves them for a specific video.
@@ -49,6 +52,21 @@ require("./lib/heatmap")(/* string in a srt format */) //returns an array heatma
 ```
 
 
+
+Subtitle encoding
+-----
+HTTP downloads preserve the original bytes. Decoding uses an explicit `options.charset`
+(unless it is `"auto"`), then a UTF-8/UTF-16 byte-order mark, then valid UTF-8 text,
+then a supported non-UTF-8 charset from the HTTP `Content-Type`, and finally automatic
+detection. NUL-containing data is left to the byte-order mark, declared charset or
+detector so UTF-16 is not mistaken for UTF-8.
+
+The declared charset also applies to gzip subtitles, but never to entries inside a
+ZIP archive. Generic `iso-8859-1`, `latin1`, `us-ascii`, `ascii` and `binary` labels are
+ignored because servers and download tools may apply them regardless of the file's
+encoding. A wrong specific legacy charset can still
+override a correct detector guess; unlabelled legacy subtitles still depend on the
+detector's supported encodings.
 
 CLI
 -----
