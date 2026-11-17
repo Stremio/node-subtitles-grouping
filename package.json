@@ -1,6 +1,6 @@
 {
   "name": "subtitles-grouping",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "description": "Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.",
   "main": "index.js",
   "bin": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ivshti/node-subtitles-grouping"
+    "url": "https://github.com/Stremio/node-subtitles-grouping"
   },
   "keywords": [
     "subtitles",
@@ -22,9 +22,9 @@
   "author": "Ivo Georgiev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ivshti/node-subtitles-grouping/issues"
+    "url": "https://github.com/Stremio/node-subtitles-grouping/issues"
   },
-  "homepage": "https://github.com/Ivshti/node-subtitles-grouping",
+  "homepage": "https://github.com/Stremio/node-subtitles-grouping",
   "dependencies": {
     "underscore": "1.8.x",
     "needle": "1.1.x",
