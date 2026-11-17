@@ -139,7 +139,7 @@ describe("retriever HTTP encoding", function() {
 			expected: subtitle
 		});
 	});
-	["iso-8859-1", "latin1", "us-ascii", "ascii", "ISO_8859_1", "latin-1"].forEach(function(label) {
+	["iso-8859-1", "latin1", "us-ascii", "ascii", "ISO_8859_1", "latin-1", "binary"].forEach(function(label) {
 		cases.push({
 			name: "detects Croatian despite a generic " + label + " label",
 			contentType: "text/plain; charset=" + label,

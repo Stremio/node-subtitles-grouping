@@ -62,8 +62,9 @@ detection. NUL-containing data is left to the byte-order mark, declared charset 
 detector so UTF-16 is not mistaken for UTF-8.
 
 The declared charset also applies to gzip subtitles, but never to entries inside a
-ZIP archive. Generic `iso-8859-1`, `latin1`, `us-ascii` and `ascii` labels are ignored
-because servers may apply them by default. A wrong specific legacy charset can still
+ZIP archive. Generic `iso-8859-1`, `latin1`, `us-ascii`, `ascii` and `binary` labels are
+ignored because servers and download tools may apply them regardless of the file's
+encoding. A wrong specific legacy charset can still
 override a correct detector guess; unlabelled legacy subtitles still depend on the
 detector's supported encodings.
 
